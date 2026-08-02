@@ -59,8 +59,8 @@ microgrids (v1.0) [Software]. GitHub. (Zenodo DOI to follow.)
 ├── requirements.txt      Version-pinned Python environment
 ├── LICENSE               MIT License
 ├── README.md             This file
-├── figures/              Exported publication figures (PNG and vector PDF)
-└── docs/                 Schematics and supporting images
+├── figures/              Exported publication figures (PNG and vector PDF) - coming soon
+└── docs/                 Schematics and supporting images - coming soon
 ```
 
 The analysis is contained in a single notebook, organised into the sections listed under Notebook structure below. Running it top to bottom reproduces every headline figure and table, each guarded by an internal validation suite.
