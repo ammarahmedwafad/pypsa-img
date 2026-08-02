@@ -47,8 +47,7 @@ All figures above are reproduced by running the notebook against the pinned envi
 The associated paper citation will be added on publication. A permanent archived version of this code will be deposited with Zenodo, and the DOI added here at that time. Until then, please cite this repository directly and refer back for the full reference.
 
 ```
-Wafad, A. A. (2026). Islanded Wind-Hydrogen-CHP Microgrid: techno-economic and
-life-cycle assessment model (v1.0) [Software]. GitHub. (Zenodo DOI to follow.)
+Wafad, A. A. (2026). PyPSA-IMG: An open optimisation model for the design and assessment of islanded, hydrogen-integrated microgrids (v1.0) [Software]. GitHub. (Zenodo DOI to follow.)
 ```
 
 ## Repository contents
