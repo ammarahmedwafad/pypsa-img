@@ -1,6 +1,6 @@
 <div align="center">
 
-# Islanded Wind-Hydrogen-CHP Microgrid
+# PyPSA-IMG: An open optimisation model for the design and assessment of islanded, hydrogen-integrated microgrids for decarbonising energy-intensive industrial sites
 
 ### An islanded, hydrogen-integrated industrial microgrid modelled in PyPSA at full hourly resolution, with techno-economic, life-cycle, uncertainty, and cost-emissions trade-off analysis
 
