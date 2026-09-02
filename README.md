@@ -11,7 +11,7 @@ Multi-carrier (electricity · hydrogen · heat) microgrid optimisation in PyPSA 
 [![PyPSA 0.20.1](https://img.shields.io/badge/PyPSA-0.20.1-1f77b4.svg)](https://pypsa.org/)
 [![Solver: GLPK](https://img.shields.io/badge/Solver-GLPK-6aa84f.svg)](https://www.gnu.org/software/glpk/)
 [![Paper](https://img.shields.io/badge/Paper-ESD%202026-blue.svg)](https://doi.org/10.1016/j.esd.2026.102133)
-[![DOI](https://img.shields.io/badge/Zenodo-pending-lightgrey.svg)](#citation)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22261065.svg)](https://doi.org/10.5281/zenodo.22261065)
 
 <!--
   Banner image. Export the three-bus microgrid schematic from the notebook
@@ -235,8 +235,8 @@ https://doi.org/10.1016/j.esd.2026.102133
 
 ```
 Wafad, A. A. (2026). PyPSA-IMG: An open optimisation model for the design and
-assessment of islanded, hydrogen-integrated microgrids (v1.0) [Software]. Zenodo.
-https://doi.org/10.5281/zenodo.XXXXXXX
+assessment of islanded, hydrogen-integrated microgrids [Software]. Zenodo.
+https://doi.org/10.5281/zenodo.22261065
 ```
 
 A `CITATION.cff` file is included, so GitHub's **"Cite this repository"** button generates these entries automatically.
