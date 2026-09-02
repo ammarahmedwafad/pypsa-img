@@ -163,7 +163,7 @@ The Monte Carlo analysis and the carbon-price sweep periodically save progress t
 
 The LOPF is solved at full hourly resolution (8,760 time steps); temporal down-sampling is not supported (see [Limitations](#limitations)). Results are guaranteed against the pinned environment and the tagged release, and every results cell carries an internal validation suite that checks its outputs against locked reference values before they are used.
 
-## Development status and roadmap
+## Development status
 
 PyPSA-IMG is under active development. Version 1.0 (tagged `v1.0-paper`) corresponds to the published paper and reproduces its results exactly against the pinned environment. The release is tagged and archived, so results remain reproducible against the specific version that produced them. Suggestions and contributions toward these directions are welcome (see [Contributing and contact](#contributing-and-contact)).
 
