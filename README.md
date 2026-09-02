@@ -40,6 +40,7 @@ Multi-carrier (electricity · hydrogen · heat) microgrid optimisation in PyPSA 
 - [Notebook structure](#notebook-structure)
 - [Limitations](#limitations)
 - [Contributing and contact](#contributing-and-contact)
+- [Community](#community)
 - [Citation](#citation)
 - [License](#license)
 - [Nomenclature and abbreviations](#nomenclature-and-abbreviations)
@@ -211,6 +212,14 @@ Contributions and feedback are welcome:
 - **Bugs and questions**: open an issue on the [issue tracker](../../issues).
 - **Improvements and site adaptations**: pull requests are welcome. If you adapt the model to another site, a note on what worked and what needed changing genuinely helps improve later versions.
 - **Contact**: Ammar Ahmed Wafad. For correspondence relating to the paper, please use the contact details in the [publication](https://doi.org/10.1016/j.esd.2026.102133).
+
+## Community
+
+A Discord community is available for discussion, questions, and collaboration around PyPSA-IMG. It is a place to ask about setup and usage, discuss the modelling and methodology, and coordinate contributions or site adaptations.
+
+[![Discord](https://img.shields.io/badge/Discord-Join%20the%20community-5865F2.svg?logo=discord&logoColor=white)](https://discord.gg/7dgbbWVTgA)
+
+Join here: YOUR_INVITE_LINK
 
 ## Citation
 
