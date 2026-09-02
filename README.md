@@ -32,35 +32,32 @@ The repository serves as the code and data availability record for the associate
 
 ## Headline results
 
-The optimised islanded microgrid comprises 18.3 MW of wind, a 2.6 MW / 10.2 MWh battery, a 4.2 MW PEM electrolyser, a 317 MWh hydrogen store, a hydrogen-fuelled CHP unit, a backup gas boiler, and waste-heat recovery. It delivers a total annualised cost of £4.53 M/yr, a levelised cost of energy of £181.85/MWh, and a levelised cost of hydrogen of £7.63/kg.
-
-Against the grid-plus-boiler baseline, the system reduces operational emissions by 72.8 percent. On a full life-cycle basis, after accounting for the annualised embodied-carbon burden, the net reduction is 48.9 percent. The one-off embodied carbon is repaid within 7.7 years, and over the 25-year horizon the system returns approximately 2.0 tonnes of CO2e avoided per tonne invested in manufacturing (net carbon return on investment).
-
-On its own, the islanded base case does not clear a 6 percent real hurdle rate, returning an internal rate of return of minus 0.9 percent. The Economic Viability Roadmap quantifies the support levers that would render the project viable, of which private-wire power monetisation is the dominant one; under the full roadmap the internal rate of return reaches 12.3 percent.
-
-A carbon-price sweep traces the cost against operational-emissions frontier. It shows that operational emissions can be driven down to a near-zero floor of roughly 94 percent abatement, but only at the frontier's over-build extreme, at close to double the annualised cost. The study therefore adopts a pragmatic near-zero design that retains a small gas-boiler backup for resilience rather than pursuing that uneconomic limit.
-
-All figures above are reproduced by running the notebook against the pinned environment. Each is documented cell by cell, with independent validation checks.
+This study advances industrial-sector energy modelling by developing an open-source, PyPSA-based multi-carrier optimisation framework for an islanded wind-hydrogen-CHP microgrid, addressing several gaps in the current literature: the scarcity of in-depth multi-carrier probabilistic approaches, the software limitations of proprietary simulators, a prevailing residential rather than industrial focus, and the absence of integrated policy analysis. Beyond techno-economic and industry-specific life-cycle assessment, it incorporates component replacement strategies, Monte Carlo risk analysis, deterministic sensitivity ranking, and a cost-emissions trade-off analysis at full 8,760-hour resolution. Crucially, it translates these results into a UK-centric policy framework for industrial decarbonisation, delivering a policy-relevant, investment-grade blueprint that moves beyond theoretical optimisation toward real-world deployment.
 
 ## Citation
 
-The associated paper citation will be added on publication. A permanent archived version of this code will be deposited with Zenodo, and the DOI added here at that time. Until then, please cite this repository directly and refer back for the full reference.
+If you use this model, please cite both the paper and the software.
 
+Paper:
 ```
-Wafad, A. A. (2026). PyPSA-IMG: An open optimisation model for the design and assessment of islanded, hydrogen-integrated
-microgrids (v1.0) [Software]. GitHub. (Zenodo DOI to follow.)
+Wafad, A. A., Sher, F., Khzouz, M., & Ioannou, A. (2026). Integrated wind hydrogen multicarrier microgrids for industrial decarbonisation and net zero transition. Energy for Sustainable Development, 95, 102133. https://doi.org/10.1016/j.esd.2026.102133
+```
+Software:
+```
+Wafad, A. A., Sher, F., Khzouz, M., & Ioannou, A. (2026). Integrated wind hydrogen multicarrier microgrids for industrial decarbonisation and net zero transition. Energy for Sustainable Development, 95, 102133. https://doi.org/10.1016/j.esd.2026.102133
 ```
 
 ## Repository contents
 
 ```
 .
-├── <notebook>.ipynb      Main analysis notebook (59 cells; run top to bottom)
-├── requirements.txt      Version-pinned Python environment
-├── LICENSE               MIT License
-├── README.md             This file
-├── figures/              Exported publication figures (PNG and vector PDF) - coming soon
-└── docs/                 Schematics and supporting images - coming soon
+├── PyPSA-IMG_v1.0.ipynb Main analysis notebook (run top to bottom)
+├── chemical_industry_load_profile_8760h.csv Industrial electricity and heat demand profile
+├── era5_wind_100m_2023_8760h.nc Wind resource data (ERA5, 100 m, 2023)
+├── requirements.txt Version-pinned Python environment
+├── LICENSE MIT License
+├── .gitignore
+└── README.md This file
 ```
 
 The analysis is contained in a single notebook, organised into the sections listed under Notebook structure below. Running it top to bottom reproduces every headline figure and table, each guarded by an internal validation suite.
