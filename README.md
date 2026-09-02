@@ -12,6 +12,7 @@ Multi-carrier (electricity · hydrogen · heat) microgrid optimisation in PyPSA 
 [![Solver: GLPK](https://img.shields.io/badge/Solver-GLPK-6aa84f.svg)](https://www.gnu.org/software/glpk/)
 [![Paper](https://img.shields.io/badge/Paper-ESD%202026-blue.svg)](https://doi.org/10.1016/j.esd.2026.102133)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22261065.svg)](https://doi.org/10.5281/zenodo.22261065)
+[![Discord](https://img.shields.io/badge/Discord-Join%20the%20community-5865F2.svg?logo=discord&logoColor=white)](https://discord.gg/7dgbbWVTgA)
 
 <!--
   Banner image. Export the three-bus microgrid schematic from the notebook
@@ -218,8 +219,6 @@ Contributions and feedback are welcome:
 A Discord community is available for discussion, questions, and collaboration around PyPSA-IMG. It is a place to ask about setup and usage, discuss the modelling and methodology, and coordinate contributions or site adaptations.
 
 [![Discord](https://img.shields.io/badge/Discord-Join%20the%20community-5865F2.svg?logo=discord&logoColor=white)](https://discord.gg/7dgbbWVTgA)
-
-Join here: YOUR_INVITE_LINK
 
 ## Citation
 
