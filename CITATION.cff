@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite both the software and the associated paper."
+title: "PyPSA-IMG: An open optimisation model for the design and assessment of islanded, hydrogen-integrated microgrids"
+version: "1.0"
+date-released: 2026-01-01
+license: MIT
+repository-code: "https://github.com/ammarahmedwafad/pypsa-img"
+authors:
+  - family-names: Wafad
+    given-names: Ammar Ahmed
+    affiliation: "Nottingham Trent University"
+keywords:
+  - PyPSA
+  - hydrogen microgrid
+  - multi-carrier energy systems
+  - industrial decarbonisation
+  - techno-economic assessment
+  - life-cycle assessment
+  - net zero
+preferred-citation:
+  type: article
+  title: "Integrated wind hydrogen multicarrier microgrids for industrial decarbonisation and net zero transition"
+  authors:
+    - family-names: Wafad
+      given-names: Ammar Ahmed
+    - family-names: Sher
+      given-names: Farooq
+    - family-names: Khzouz
+      given-names: Martin
+    - family-names: Ioannou
+      given-names: Alexandra
+  journal: "Energy for Sustainable Development"
+  volume: 95
+  start: 102133
+  year: 2026
+  doi: "10.1016/j.esd.2026.102133"
+  issn: "0973-0826"
