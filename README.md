@@ -36,7 +36,7 @@ Multi-carrier (electricity · hydrogen · heat) microgrid optimisation in PyPSA 
 - [Configuration](#configuration)
 - [Long runs and checkpoints](#long-runs-and-checkpoints)
 - [Reproducibility](#reproducibility)
-- [Development status and roadmap](#development-status)
+- [Development status](#development-status)
 - [Notebook structure](#notebook-structure)
 - [Limitations](#limitations)
 - [Contributing and contact](#contributing-and-contact)
