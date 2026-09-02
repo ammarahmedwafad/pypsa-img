@@ -26,7 +26,7 @@
 
 ## Overview
 
-This repository contains the model underlying a study of an islanded wind-hydrogen-combined-heat-and-power (CHP) microgrid serving a pharmaceutical site in Teesside, United Kingdom. The model is implemented in PyPSA and solved at full hourly resolution (8,760 snapshots) as a linear optimal power flow. Beyond the core techno-economic assessment (TEA), it includes a lifecycle assessment (LCA), a Monte Carlo uncertainty analysis, a one-at-a-time sensitivity ranking, and a parametric carbon-price sweep based trade-off analysis that traces the cost against operational-emissions frontier and its marginal abatement cost.
+This repository contains the model underlying a study of an islanded wind-hydrogen-combined-heat-and-power (CHP) microgrid serving a pharmaceutical site in Teesside, United Kingdom. The model is implemented in PyPSA and solved at full hourly resolution (8,760 snapshots) as a linear optimal power flow. Beyond the core model development and techno-economic assessment (TEA), it includes a lifecycle assessment (LCA), a Monte Carlo uncertainty analysis, a one-at-a-time sensitivity ranking, and a parametric carbon-price sweep based trade-off analysis that traces the cost against operational-emissions frontier and its marginal abatement cost.
 
 The repository serves as the code and data availability record for the associated publication. Its purpose is to reproduce the reported results and to allow the model to be adapted to other sites. The full publication reference is added on publication.
 
