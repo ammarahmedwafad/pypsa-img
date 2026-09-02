@@ -216,7 +216,7 @@ Contributions and feedback are welcome:
 
 - **Bugs and questions**: open an issue on the [issue tracker](../../issues).
 - **Improvements and site adaptations**: pull requests are welcome. If you adapt the model to another site, a note on what worked and what needed changing genuinely helps improve later versions.
-- **Contact**: Ammar Ahmed Wafad, Nottingham Trent University. For correspondence relating to the paper, please use the contact details in the [publication](https://doi.org/10.1016/j.esd.2026.102133).
+- **Contact**: Ammar Ahmed Wafad. For correspondence relating to the paper, please use the contact details in the [publication](https://doi.org/10.1016/j.esd.2026.102133).
 
 ## Citation
 
