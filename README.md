@@ -165,13 +165,7 @@ The LOPF is solved at full hourly resolution (8,760 time steps); temporal down-s
 
 ## Development status and roadmap
 
-PyPSA-IMG is under active development. Version 1.0 (tagged `v1.0-paper`) corresponds to the published paper and reproduces its results exactly against the pinned environment. The framework is intended to grow beyond the single-site case study; planned directions include:
-
-- **Multi-site cluster optimisation**, extending the single-site model to co-optimise several industrial sites with shared assets and inter-site energy exchange.
-- **Grid-connected scenarios**, as a configurable alternative to the fully islanded design.
-- **Additional technologies and support mechanisms**, broadening the component library and the Economic Viability Roadmap levers.
-
-Each release is tagged and archived, so results remain reproducible against the specific version that produced them. Suggestions and contributions toward these directions are welcome (see [Contributing and contact](#contributing-and-contact)).
+PyPSA-IMG is under active development. Version 1.0 (tagged `v1.0-paper`) corresponds to the published paper and reproduces its results exactly against the pinned environment. The release is tagged and archived, so results remain reproducible against the specific version that produced them. Suggestions and contributions toward these directions are welcome (see [Contributing and contact](#contributing-and-contact)).
 
 ## Notebook structure
 
