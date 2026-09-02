@@ -26,9 +26,78 @@
 
 ## Overview
 
-This repository contains the model underlying a study of an islanded wind-hydrogen-combined-heat-and-power (CHP) microgrid serving a pharmaceutical site in Teesside, United Kingdom. The model is implemented in PyPSA and solved at full hourly resolution (8,760 snapshots) as a linear optimal power flow. Beyond the core model development and techno-economic assessment (TEA), it includes a lifecycle assessment (LCA), a Monte Carlo uncertainty analysis, a one-at-a-time sensitivity ranking, and a parametric carbon-price sweep based trade-off analysis that traces the cost against operational-emissions frontier and its marginal abatement cost.
+PyPSA-IMG is an open-source optimisation model for designing and assessing islanded, hydrogen-integrated industrial microgrids. It couples electricity, hydrogen, and heat within a single PyPSA network and solves the system as a linear optimal power flow (LOPF) at full hourly resolution (8,760 snapshots), sizing and dispatching each component at least cost.
 
-The repository serves as the code and data availability record for the associated publication. Its purpose is to reproduce the reported results and to allow the model to be adapted to other sites. The full publication reference is added on publication.
+Around this core dispatch, the model provides an integrated analysis pipeline: a techno-economic assessment, a life-cycle carbon assessment, a Monte Carlo uncertainty analysis, a deterministic sensitivity ranking, and a cost-emissions trade-off study. It is written to be re-pointed at any industrial site by substituting the wind resource and demand profile.
+
+The model was developed and validated for the chemical and process industrial cluster in Teesside, United Kingdom; that application and its results are reported in the associated paper (see Citation). This repository is the code and data-availability record for that publication and the maintained home of the model.
+
+## What the model does
+
+The microgrid integrates onshore wind, a PEM electrolyser, hydrogen storage, a battery, a hydrogen-fuelled CHP unit, waste-heat recovery, and a backup gas boiler. On top of the LOPF dispatch, the model runs:
+
+Techno-economic assessment (TEA) — endogenous component sizing, annualised cost, levelised cost of energy and hydrogen, discounted cash flow, NPV, and IRR.
+Economic Viability Roadmap (EVR) — quantifies how contingent policy support levers (private-wire supply, hydrogen production support, capital grants, oxygen by-product sales) move project viability, as a basis for industrial-decarbonisation policy analysis.
+Life-cycle carbon assessment (LCA) — operational and embodied emissions, component-replacement accounting, carbon payback, and carbon return on investment.
+Monte Carlo uncertainty analysis — probabilistic stress-testing over 1,000 iterations, with paired base and roadmap cases evaluated on each draw.
+Sensitivity ranking — one-at-a-time (tornado) analysis of the dominant cost and emission drivers.
+Cost-emissions trade-off — a carbon-price sweep tracing the cost against operational-emissions frontier and its marginal abatement cost.
+
+Every analysis runs at full 8,760-hour resolution, and every results cell is guarded by an internal validation suite that reconciles its outputs against locked reference values before they are used.
+
+## Repository contents
+
+```
+.
+├── PyPSA-IMG_v1.0.ipynb                        Main analysis notebook (run top to bottom)
+├── chemical_industry_load_profile_8760h.csv    Hourly electricity and heat demand profile
+├── era5_wind_100m_2023_8760h.nc                Wind resource (ERA5, 100 m, 2023)
+├── requirements.txt                            Version-pinned Python environment
+├── LICENSE                                     MIT License
+├── .gitignore
+└── README.md                                   This file
+```
+
+The model is contained in a single notebook. Running it top to bottom reproduces every figure and table reported in the paper, each guarded by an internal validation suite.
+
+## Quick start
+
+The model runs end to end in one notebook. Google Colab is the fastest route; local execution is also supported.
+
+# Google Colab (recommended)
+
+1. Open PyPSA-IMG_v1.0.ipynb in Colab.
+2. Run the first cell (environment setup); it installs the pinned dependencies. Restart the runtime when prompted, then run again from the top so the pinned versions are the ones loaded.
+3. (Optional) To retrieve fresh wind data, add a Copernicus Climate Data Store API key as a Colab secret named CDS_API_KEY. The wind file included in this repository can be used directly instead.
+4. Run the cells in order. The deterministic results (TEA, LCA, trade-off) reproduce in a few minutes.
+
+# Local
+
+# Python 3.12 environment
+pip install -r requirements.txt
+
+# system-level solver and geospatial libraries (Debian/Ubuntu example)
+sudo apt-get install glpk-utils libproj-dev libgeos-dev
+
+Then launch Jupyter, open PyPSA-IMG_v1.0.ipynb, and run the cells in order from the top.
+
+**Reproducing the published results.** Running top to bottom against the pinned environment reproduces every headline figure and table. The Monte Carlo loop (RUN_MONTE_CARLO, default False) and the carbon-price sweep are computationally heavy and are not required for the deterministic results; both restore from checkpoints where available and are provided for transparency.
+
+## Adapting the model to your own site
+
+The model is designed to be re-pointed at a different industrial site:
+
+1. **Demand.** Replace chemical_industry_load_profile_8760h.csv with your own 8,760-row hourly series using the same columns (Timestamp, electricity_demand_kW, heat_demand_kW), and point the demand-file variable in the configuration cell at it.
+2. **Wind resource.** Set the site coordinates in the marked configuration cell; the notebook retrieves the matching ERA5 grid cell from the Copernicus Climate Data Store (free API key required), or supply your own ERA5 .nc file in the same format.
+3. **Parameters.** Adjust the real WACC, carbon price, project lifetime, technology-inclusion flags, and wind loss sub-factors in the configuration dataclass. Values a user may reasonably change are marked inline in the code.
+4. **Reset checkpoints.** Set CHECKPOINT_RESET = True (or delete the checkpoint files) so results are recomputed against your inputs, not carried over.
+5. **Re-run from the top.** Results are specific to the wind resource and demand profile, so a full re-run is required; checkpoints from another configuration must not be reused.
+
+## Requirements and environment
+
+The model runs in a version-pinned environment to guarantee reproducibility. Core dependencies are PyPSA 0.20.1 (frozen, because later releases alter component cost attributes), NumPy < 2.0, pandas < 2.3, Pyomo < 6.7, and SciPy < 1.12, with the GLPK solver (invoked with pyomo=False). Development was on Google Colab with Python 3.12; local execution is supported through requirements.txt. System-level dependencies (GLPK, and PROJ/GEOS for the optional maps) are installed through the host package manager.
+
+On first import, the frozen environment emits a Pyomo deprecation notice and several pandas future-warnings originating inside PyPSA 0.20.1. These are expected on every run and have no effect on the numerical results.
 
 ## Headline results
 
@@ -46,23 +115,6 @@ Software:
 ```
 Wafad, A. A., Sher, F., Khzouz, M., & Ioannou, A. (2026). Integrated wind hydrogen multicarrier microgrids for industrial decarbonisation and net zero transition. Energy for Sustainable Development, 95, 102133. https://doi.org/10.1016/j.esd.2026.102133
 ```
-
-## Repository contents
-
-```
-.
-├── PyPSA-IMG_v1.0.ipynb Main analysis notebook (run top to bottom)
-├── chemical_industry_load_profile_8760h.csv Industrial electricity and heat demand profile
-├── era5_wind_100m_2023_8760h.nc Wind resource data (ERA5, 100 m, 2023)
-├── requirements.txt Version-pinned Python environment
-├── LICENSE MIT License
-├── .gitignore
-└── README.md This file
-```
-
-The analysis is contained in a single notebook, organised into the sections listed under Notebook structure below. Running it top to bottom reproduces every headline figure and table, each guarded by an internal validation suite.
-
-
 
 
 ## Requirements and environment
